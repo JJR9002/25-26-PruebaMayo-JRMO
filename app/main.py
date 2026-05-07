@@ -12,3 +12,6 @@ app.include_router(items.router)
 @app.get("/status")
 def version():
     return {"status": "RuizMontesdeOca, Joaquin - v.xx"}
+
+
+# Hola comment de prueba
