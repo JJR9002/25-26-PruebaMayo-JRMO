@@ -39,9 +39,9 @@ jobs:
       with:
         host: ${{ secrets.EC2_IP }}
         username: ${{ secrets.EC2_USER }}
-        port: 80 # ${{ secrets.PORT }}
+        port: 22 # ${{ secrets.PORT }}
         key: ${{ secrets.EC2_KEY }}
-        source: "docker-compose.yml"
+        source: "compose.yml"
         target: /home/admin
     # 2
     - name: script deploy docker services 
@@ -50,7 +50,7 @@ jobs:
         host: ${{ secrets.EC2_IP }}
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_KEY }}
-        port: 80  # ${{ secrets.PORT }}
+        port: 22  # ${{ secrets.PORT }}
         script: |
             sleep 60
             docker compose down --rmi all
